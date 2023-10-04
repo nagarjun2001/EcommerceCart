@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class EcommerceCart {
     public static void main(String[] args) {
-        // Create instances of your classes and perform operations here.
         Product laptop = new Laptop("Laptop", 1000.0, true, "Specs");
         Product headphones = new Headphones("Headphones", 50.0, true, "Brand");
 
@@ -23,7 +22,7 @@ public class EcommerceCart {
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -31,7 +30,7 @@ public class EcommerceCart {
                     String productName = scanner.nextLine();
                     System.out.print("Enter quantity: ");
                     int quantityToAdd = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline character
+                    scanner.nextLine(); 
                     Product productToAdd = getProductByName(productName, laptop, headphones);
                     if (productToAdd != null) {
                         cart.addItem(productToAdd, quantityToAdd);
@@ -45,7 +44,7 @@ public class EcommerceCart {
                     String productNameToUpdate = scanner.nextLine();
                     System.out.print("Enter new quantity: ");
                     int newQuantity = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline character
+                    scanner.nextLine(); 
                     cart.updateQuantity(productNameToUpdate, newQuantity);
                     System.out.println("Quantity updated.");
                     break;
@@ -71,7 +70,6 @@ public class EcommerceCart {
         }
     }
 
-    // Helper method to get a product by name
     static Product getProductByName(String productName, Product... products) {
         for (Product product : products) {
             if (product.getName().equalsIgnoreCase(productName)) {
@@ -81,7 +79,6 @@ public class EcommerceCart {
         return null;
     }
 
-    // Helper method to view the list of products
     static void viewProducts(Product... products) {
         System.out.println("List of Products:");
         for (Product product : products) {
